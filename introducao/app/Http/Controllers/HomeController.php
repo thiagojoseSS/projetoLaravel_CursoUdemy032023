@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        return "Você está na raiz do Projeto";
+        return view('home');
     }
 }

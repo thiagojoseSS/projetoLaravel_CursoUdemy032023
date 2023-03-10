@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 class ProdutosController extends Controller
 {
     public function index(){
-        return "Página de produto";
+        return view('produtos.index');
     }
 
     public function create(){
-        return "Página de Inserir produto";
+        return view('produtos.create');
     }
 
     public function show($nome, $valor = null){
-        return "produto é $nome" . (($valor == null) ? "" : ", e o valor é $valor") . "!";
+        return view('produtos.show');
+        // return "produto é $nome" . (($valor == null) ? "" : ", e o valor é $valor") . "!";
     }
 }
