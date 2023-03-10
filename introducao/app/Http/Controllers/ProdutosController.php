@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\produto;
 use Illuminate\Http\Request;
 
 class ProdutosController extends Controller
 {
     public function index(){
+        $produtos = produto::all();
+        return $produtos;
         return view('produtos.index');
     }
 
