@@ -17,6 +17,9 @@ use App\Http\Controllers\ProdutosController;
 
 Route::get('/', HomeController::class);
 
+Route::get('produtos/inserir', [ProdutosController::class, 'index']);
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
