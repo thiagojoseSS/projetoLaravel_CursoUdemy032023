@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', HomeController::class {
+    
 });
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('users/{id}', function ($id) {
     return "usuario e o seu id é $id";
