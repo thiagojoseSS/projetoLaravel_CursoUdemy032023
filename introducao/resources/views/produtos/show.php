@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>O nome do produto é php <?php echo $nome; ?><?php echo (($valor == null) ? "" : ", e o valor é $valor"); ?>!</h1>
+    <h1>O nome do produto é <?php echo $nome; ?><?php echo (($valor == null) ? "" : ", e o valor é $valor"); ?>!</h1>
 </body>
 </html>
