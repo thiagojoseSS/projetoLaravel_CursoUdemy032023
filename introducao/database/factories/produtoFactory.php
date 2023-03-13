@@ -17,9 +17,9 @@ class produtoFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'descricao' => fake()->text(),
-            'valor' => fake()->biasedNumberBetween(1, 3000),
+            'nome' => fake()->name(),
+            'descricao' => fake()->paragraph(),
+            'valor' => fake()->randomFloat(2, 10, 100)
         ];
     }
 }

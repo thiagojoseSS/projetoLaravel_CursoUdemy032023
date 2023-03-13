@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
-            $table->id();
+            $table->increments('id');
             $table->string('nome', 50);
             $table->string('descricao', 1000);
             $table->decimal('valor', 8, 2);
-            $table->timestamps();
         });
     }
 

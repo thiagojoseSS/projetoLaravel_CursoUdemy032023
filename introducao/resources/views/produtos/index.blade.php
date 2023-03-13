@@ -10,7 +10,7 @@
     <h1>Página dos Produtos</h1>
     @foreach($produtos as $produto)
     <p>
-        {{$produto->nome}}
+        {{$produto}}
     </p>
     @endforeach
 
