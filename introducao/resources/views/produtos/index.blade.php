@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.template')
+@section('title', 'Página dos Produtos')
+@section('content')
     <h1>Página dos Produtos</h1>
     @foreach($produtos as $produto)
     <p>
-        {{$produto}}
+        {{$produto->nome}}
     </p>
     @endforeach
 
     {{$produtos->links()}}
-</body>
-</html>
+@endsection

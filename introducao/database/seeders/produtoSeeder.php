@@ -13,8 +13,6 @@ class produtoSeeder extends Seeder
      */
     public function run(): void
     {
-        $produto = produto::factory()->create();
-        system($produto);
         produto::factory()->count(5000)->create()->each(function ($produtos){
             $produtos->save();
             
