@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-clip-text text-blue-800 bg-gradient-to-t from-black to-gray-900">
     @yield('content')
 </body>
 </html>
