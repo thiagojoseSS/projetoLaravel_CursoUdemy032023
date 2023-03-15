@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "./introducao"
+		}
+	],
+	"settings": {
+		"intelephense.environment.phpVersion": "8.2",
+		"php.executablePath": "C:/xampp8.2/php/php.exe",
+		"intelephense.files.associations": [
+			"*.blade.php",
+			"*.php",
+			"*.phtml"
+		],
+		"git.autofetch": true,
+	}
+}
