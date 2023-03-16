@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nome', 50);
             $table->string('descricao', 1000);
             $table->decimal('valor', 8, 2);
+            $table->float('estoque', 8, 3);
         });
     }
 

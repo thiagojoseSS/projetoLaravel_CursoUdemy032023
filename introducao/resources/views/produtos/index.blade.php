@@ -2,8 +2,56 @@
 @section('title', 'Página dos Produtos')
 @section('content')
 <div class="w-2/3 container">
-    <a name="inserirProduto" id="inserirProduto" class="btn btn-success mt-4 mb-4" href="produtos/inserir" role="button">Inserir
-        Produto</a>
+
+    <a name="inserirProduto" id="inserirProduto" class="btn btn-success mt-4 mb-4" href="produtos/inserir" role="button">Inserir Produto</a>        
+    
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="show mb-2">
+                    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+                        <div class="navbar-brand ml-2">Mostrar</div>
+                        <div class="collapse navbar-collapse" id="collapsibleNavId">
+                            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                                <input type="number" name="qntPag" id="qntPag" value="10" class="text-blue-800 text-lg pl-2 w-20">
+                                <div class="navbar-text ml-2">Registros</div>
+                            </ul>
+                            <form class="d-flex my-2 my-lg-0">
+                                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+                <table class="table table-bordered table-hover thead-dark" id="dataTable" width="100%" cellspacing=""0>
+                    <thead>
+                        <tr class="table-secondary">
+                            <th>Nome</th>
+                            <th>Valor</th>
+                            <th>Estoque</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($produtos as $produto)
+                        <tr>
+                            <td>{{$produto->nome}}</td>
+                            <td>{{$produto->valor}}</td>
+                            <td>{{$produto->estoque}}</td>
+                            <td>PlayGamer</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <div class="text-right bg-violet-800">
+                    {{$produtos->links()}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mt-5 mb-5">
+
     <table class="table-auto border-dashed border-2 border-orange-300 align-top">
         <thead>
             <tr>
