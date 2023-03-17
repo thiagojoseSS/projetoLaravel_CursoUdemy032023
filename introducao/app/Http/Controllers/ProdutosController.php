@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 
 class ProdutosController extends Controller
 {
+    public $perPag = 10;
     public function index(){
-        $produtos = produto::paginate();
+        $produtos = produto::paginate($this->perPag);
         // return $produtos;
-        return view('produtos.index', ['produtos' => $produtos]);
+        return view('produtos.index', ['produtos' => $produtos, 'perPag' => $this->perPag]);
     }
 
     public function create(){

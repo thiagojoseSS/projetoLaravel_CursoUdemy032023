@@ -3,8 +3,10 @@
 @section('content')
 <div class="w-2/3 container">
 
-    <a name="inserirProduto" id="inserirProduto" class="btn btn-success mt-4 mb-4" href="produtos/inserir" role="button">Inserir Produto</a>        
-    
+    <script src="../../../public/assets/datatables/jquery.dataTables.js"></script>
+
+    <a name="inserirProduto" id="inserirProduto" class="btn btn-success mt-4 mb-4" href="produtos/inserir" role="button">Inserir Produto</a>
+
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
@@ -18,12 +20,12 @@
                             </ul>
                             <form class="d-flex my-2 my-lg-0">
                                 <input class="form-control me-sm-2" type="text" placeholder="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                <button class="btn btn-outline-success my-2 my-sm-0 mr-3" type="submit">Search</button>
                             </form>
                         </div>
                     </nav>
                 </div>
-                <table class="table table-bordered table-hover thead-dark" id="dataTable" width="100%" cellspacing=""0>
+                <table class="table table-bordered table-hover thead-dark" id="#example" width="100%" cellspacing=""0>
                     <thead>
                         <tr class="table-secondary">
                             <th>Nome</th>
@@ -33,6 +35,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{}}
                         @foreach($produtos as $produto)
                         <tr>
                             <td>{{$produto->nome}}</td>
@@ -52,7 +55,7 @@
 
     <hr class="mt-5 mb-5">
 
-    <table class="table-auto border-dashed border-2 border-orange-300 align-top">
+    <table class="table-auto border-dashed border-orange-300 align-top">
         <thead>
             <tr>
                 <th>Nome</th>
