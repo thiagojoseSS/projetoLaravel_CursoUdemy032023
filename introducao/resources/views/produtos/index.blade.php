@@ -14,17 +14,21 @@
                     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
                         <div class="navbar-brand ml-2">Mostrar</div>
                         <div class="collapse navbar-collapse" id="collapsibleNavId">
-                            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                                <input type="number" name="qntPag" id="qntPag" value="10" class="text-blue-800 text-lg pl-2 w-20">
-                                <div class="navbar-text ml-2">Registros</div>
-                            </ul>
-                            <form class="d-flex my-2 my-lg-0">
-                                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0 mr-3" type="submit">Search</button>
+                            <form class="d-flex my-2 my-lg-0" id="form01">
+                                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                                    <input type="number" name="qntPag" id="qntPag" value="15" class="text-blue-800 text-lg pl-2 w-20">
+                                    
+                                    <div class="navbar-text ml-2">Registros</div>
+                                </ul>
+                                <div class="d-flex my-2 my-lg-0">
+                                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                                    <button class="btn btn-outline-success my-2 my-sm-0 mr-3" type="submit">Search</button>
+                                </div>
                             </form>
                         </div>
                     </nav>
                 </div>
+                {{route('produtos.index', ['qntPag' => ])}}
                 <table class="table table-bordered table-hover thead-dark" id="#example" width="100%" cellspacing=""0>
                     <thead>
                         <tr class="table-secondary">
@@ -35,7 +39,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{}}
                         @foreach($produtos as $produto)
                         <tr>
                             <td>{{$produto->nome}}</td>
