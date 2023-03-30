@@ -7,6 +7,9 @@
 
     <a name="inserirProduto" id="inserirProduto" class="btn btn-success mt-4 mb-4" href="produtos/inserir" role="button">Inserir Produto</a>
 
+    <?php $qntPag = (isset($_GET['qntPag'])) ? $_GET['qntPag'] : 10 ?>
+    <?php echo((isset($_GET['search'])) ? $_GET['search'] : 10 ) ?>
+
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
@@ -16,19 +19,20 @@
                         <div class="collapse navbar-collapse" id="collapsibleNavId">
                             <form class="d-flex my-2 my-lg-0" id="form01">
                                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                                    <input type="number" name="qntPag" id="qntPag" value="15" class="text-blue-800 text-lg pl-2 w-20">
+                                    <input type="number" name="qntPag" id="qntPag" value="<?php echo((isset($_GET['qntPag'])) ? $_GET['qntPag'] : 10 ) ?>" class="text-blue-800 text-lg pl-2 w-20">
                                     
                                     <div class="navbar-text ml-2">Registros</div>
                                 </ul>
                                 <div class="d-flex my-2 my-lg-0">
-                                    <input class="form-control me-sm-2" type="text" placeholder="Search">
-                                    <button class="btn btn-outline-success my-2 my-sm-0 mr-3" type="submit">Search</button>
+                                    <input class="form-control me-sm-2" type="text" name="search" id="search" placeholder="Search"
+                                    value="<?php echo((isset($_GET['search'])) ? $_GET['search'] : '' ) ?>">
+                                    <button class="btn btn-info my-2 my-sm-0 mr-3" type="submit">Search</button>
                                 </div>
                             </form>
                         </div>
                     </nav>
                 </div>
-                {{route('produtos.index', ['qntPag' => ])}}
+                
                 <table class="table table-bordered table-hover thead-dark" id="#example" width="100%" cellspacing=""0>
                     <thead>
                         <tr class="table-secondary">

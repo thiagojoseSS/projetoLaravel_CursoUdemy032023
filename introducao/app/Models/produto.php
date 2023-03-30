@@ -14,22 +14,24 @@ class produto extends Model
     const CREATED_AT = null;
     const UPDATED_AT = null;
     public $timestamps = false;
+    public $perPag = 10;
 
     public function index(ClientRequest $request){
+        $this->perPag = (isset($_GET['qntPag'])) ? $_GET['qntPag'] : $this->perPag;
         if ($request->has('search')) {
  
             $search = $request->get('search');
            
-            $customers = Customer::where('nome', 'like', "%{$search}%")
+            $produtos = produto::where('nome', 'like', "%{$search}%")
                 ->orWhere('descricao', 'like', "%{$search}%")
                 ->orWhere('valor', 'like', "%{$search}%")
-                ->paginate(10);
+                ->paginate($this->perPag);
            
-            $customers->appends(['search' => $search]);
-            return view('produtos.grid', compact('produtos', 'search'));
+            $produtos->appends(['search' => $search]);
+            return view('produtos.index', compact('produtos', 'search'));
         } else {
-            $customers = Customer::paginate(10);
-            return view('produtos.grid', compact('produtos'));
+            $produtos = produto::paginate($this->perPag);
+            return view('produtos.index', compact('produtos'));
         }
     }
 }
