@@ -5,7 +5,7 @@
 
     <script src="../../../public/assets/datatables/jquery.dataTables.js"></script>
 
-    <a name="inserirProduto" id="inserirProduto" class="btn btn-success mt-4 mb-4" href="produtos/inserir" role="button">Inserir Produto</a>
+    <a name="inserirProduto" id="inserirProduto" class="btn btn-success mt-4 mb-4" href="{{route('produtos.inserir')}}" role="button">Inserir Produto</a>
 
     <!-- <?php $qntPag = (isset($_GET['qntPag'])) ? $_GET['qntPag'] : 10 ?>
     <?php echo((isset($_GET['search'])) ? $_GET['search'] : 10 ) ?> -->
@@ -48,7 +48,7 @@
                             <td>{{$produto->nome}}</td>
                             <td>{{$produto->valor}}</td>
                             <td>{{$produto->estoque}}</td>
-                            <td>PlayGamer</td>
+                            <td><i class="fa-solid fa-eye"></i></td>
                         </tr>
                         @endforeach
                     </tbody>
