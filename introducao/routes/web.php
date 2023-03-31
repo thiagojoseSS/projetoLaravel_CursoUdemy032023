@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdutosController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Pluralizer;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,6 @@ use App\Http\Controllers\ProdutosController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', HomeController::class);
 
 Route::get('produtos/inserir', [ProdutosController::class, 'create']);

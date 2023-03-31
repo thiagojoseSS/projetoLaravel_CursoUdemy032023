@@ -24,7 +24,8 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "lang\\LaravelPtBRLocalization\\": "lang/"
         }
     },
     "autoload-dev": {
@@ -49,7 +50,10 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [],
+            "providers": [
+                "LaravelPtBRLocalization\\LaravelPtBRLocalizationServiceProvider"
+            ]
         }
     },
     "config": {

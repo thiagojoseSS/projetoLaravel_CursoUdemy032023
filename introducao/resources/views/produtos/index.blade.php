@@ -7,8 +7,8 @@
 
     <a name="inserirProduto" id="inserirProduto" class="btn btn-success mt-4 mb-4" href="produtos/inserir" role="button">Inserir Produto</a>
 
-    <?php $qntPag = (isset($_GET['qntPag'])) ? $_GET['qntPag'] : 10 ?>
-    <?php echo((isset($_GET['search'])) ? $_GET['search'] : 10 ) ?>
+    <!-- <?php $qntPag = (isset($_GET['qntPag'])) ? $_GET['qntPag'] : 10 ?>
+    <?php echo((isset($_GET['search'])) ? $_GET['search'] : 10 ) ?> -->
 
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -26,14 +26,14 @@
                                 <div class="d-flex my-2 my-lg-0">
                                     <input class="form-control me-sm-2" type="text" name="search" id="search" placeholder="Search"
                                     value="<?php echo((isset($_GET['search'])) ? $_GET['search'] : '' ) ?>">
-                                    <button class="btn btn-info my-2 my-sm-0 mr-3" type="submit">Search</button>
+                                    <button class="btn btn-warning my-2 my-sm-0 mr-3 hover:shadow-lg hover:shadow-orange-800" type="submit">Search</button>
                                 </div>
                             </form>
                         </div>
                     </nav>
                 </div>
                 
-                <table class="table table-bordered table-hover thead-dark" id="#example" width="100%" cellspacing=""0>
+                <table class="table table-bordered table-hover thead-dark table-dark" id="#example" width="100%" cellspacing=""0>
                     <thead>
                         <tr class="table-secondary">
                             <th>Nome</th>
@@ -61,7 +61,7 @@
     </div>
 
     <hr class="mt-5 mb-5">
-
+<!-- 
     <table class="table-auto border-dashed border-orange-300 align-top">
         <thead>
             <tr>
@@ -90,7 +90,7 @@
 
     <div class="flex text-blue-800 px-8 origin-right transform skew-x-12">
         {{$produtos->links()}}
-    </div>
+    </div> -->
 </div>
 <button class="btn btn-success position-relative m-2">
     Inbox
