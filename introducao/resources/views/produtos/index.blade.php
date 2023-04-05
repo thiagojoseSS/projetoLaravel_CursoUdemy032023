@@ -9,27 +9,26 @@
 
     <!-- <?php $qntPag = (isset($_GET['qntPag'])) ? $_GET['qntPag'] : 10 ?>
     <?php echo((isset($_GET['search'])) ? $_GET['search'] : 10 ) ?> -->
-
+    
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
                 <div class="show mb-2">
-                    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-                        <div class="navbar-brand ml-2">Mostrar</div>
-                        <div class="collapse navbar-collapse" id="collapsibleNavId">
-                            <form class="d-flex my-2 my-lg-0" id="form01">
-                                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <nav class="navbar navbar-expand{-sm|-md|-lg|-xl|-xxl} navbar-dark bg-primary">
+                        <form class="my-2 my-lg-auto" id="form01">
+                            <div class="d-flex">
+                                <div class="d-flex navbar-nav mt-2 mt-lg-0 mr-4">
+                                    <div class="navbar-brand ml-2">Mostrar</div>
                                     <input type="number" name="qntPag" id="qntPag" value="<?php echo((isset($_GET['qntPag'])) ? $_GET['qntPag'] : 10 ) ?>" class="text-blue-800 text-lg pl-2 w-20">
-                                    
                                     <div class="navbar-text ml-2">Registros</div>
-                                </ul>
-                                <div class="d-flex my-2 my-lg-0">
+                                </div>
+                                <div class="d-flex navbar-nav">
                                     <input class="form-control me-sm-2" type="text" name="search" id="search" placeholder="Search"
                                     value="<?php echo((isset($_GET['search'])) ? $_GET['search'] : '' ) ?>">
                                     <button class="btn btn-warning my-2 my-sm-0 mr-3 hover:shadow-lg hover:shadow-orange-800" type="submit">Search</button>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </nav>
                 </div>
                 
@@ -53,8 +52,9 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="text-right bg-violet-800">
+                <div class="text-right">
                     {{$produtos->links()}}
+                    {{$produtos->total()}}
                 </div>
             </div>
         </div>
