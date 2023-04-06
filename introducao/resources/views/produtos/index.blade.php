@@ -14,16 +14,18 @@
         <div class="card-body">
             <div class="table-responsive">
                 <div class="show mb-2">
-                    <nav class="navbar navbar-expand{-sm|-md|-lg|-xl|-xxl} navbar-dark bg-primary">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                         <form class="my-2 my-lg-auto" id="form01">
-                            <div class="d-flex">
-                                <div class="d-flex navbar-nav mt-2 mt-lg-0 mr-4">
-                                    <div class="navbar-brand ml-2">Mostrar</div>
+                            <div class="d-flex container-fluid " id="collapsibleNavId"">
+                                <ul class="navbar-nav me-auto mt-2 mt-lg-0 ml-2 input-group">
+                                    <div class="input-group-text">Mostrar</div>
+                                    <!-- <div class="mt-2"> -->
                                     <input type="number" name="qntPag" id="qntPag" value="<?php echo((isset($_GET['qntPag'])) ? $_GET['qntPag'] : 10 ) ?>" class="text-blue-800 text-lg pl-2 w-20">
-                                    <div class="navbar-text ml-2">Registros</div>
-                                </div>
-                                <div class="d-flex navbar-nav">
-                                    <input class="form-control me-sm-2" type="text" name="search" id="search" placeholder="Search"
+                                    <!-- </div> -->
+                                    <div class="ml-2 input-group-text">Registros</div>
+                                </ul>
+                                <div class="d-flex input-group" role="search">
+                                    <input class="form-control" type="text" name="search" id="search" placeholder="Search"
                                     value="<?php echo((isset($_GET['search'])) ? $_GET['search'] : '' ) ?>">
                                     <button class="btn btn-warning my-2 my-sm-0 mr-3 hover:shadow-lg hover:shadow-orange-800" type="submit">Search</button>
                                 </div>
