@@ -49,7 +49,7 @@
                             <td>{{$produto->nome}}</td>
                             <td>{{$produto->valor}}</td>
                             <td>{{$produto->estoque}}</td>
-                            <td><i class="fa-solid fa-eye"></i></td>
+                            <td><a href="{{route('produtos.descricao', $produto->nome)}}"><i class="fas fa-eye text-primary"></i></a></td>
                         </tr>
                         @endforeach
                     </tbody>

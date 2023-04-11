@@ -19,7 +19,8 @@ use Illuminate\Support\Pluralizer;
 Route::get('/', HomeController::class);
 
 Route::get('produtos/inserir', [ProdutosController::class, 'create'])->name('produtos.inserir');
-Route::get('produtos/{nome}/{valor?}', [ProdutosController::class, 'show'])->name('produtos.descricao');
+Route::get('produtos/{id}', [ProdutosController::class, 'show'])->name('produtos.descricao');
+// Route::get('produtos/{nome}/{valor?}', [ProdutosController::class, 'show'])->name('produtos.descricao');
 Route::get('produtos', [ProdutosController::class, 'index'])->name('produtos');
 
 

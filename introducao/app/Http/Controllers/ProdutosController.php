@@ -34,8 +34,12 @@ class ProdutosController extends Controller
         return view('produtos.create');
     }
 
-    public function show($nome, $valor = null){
-        return view('produtos.show', ['nome' => $nome, 'valor' => $valor]);
-        // return "produto é $nome" . (($valor == null) ? "" : ", e o valor é $valor") . "!";
+    public function show($id){
+        return view('produtos.show', ['id' => $id]);
     }
+
+    // public function show($nome, $valor = null){
+    //     return view('produtos.show', ['nome' => $nome, 'valor' => $valor]);
+    //     // return "produto é $nome" . (($valor == null) ? "" : ", e o valor é $valor") . "!";
+    // }
 }
