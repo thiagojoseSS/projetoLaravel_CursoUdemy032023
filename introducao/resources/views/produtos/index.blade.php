@@ -47,9 +47,12 @@
                         @foreach($produtos as $produto)
                         <tr>
                             <td>{{$produto->nome}}</td>
-                            <td>{{$produto->valor}}</td>
-                            <td>{{$produto->estoque}}</td>
-                            <td><a href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-eye text-primary"></i></a></td>
+                            <td>R$ <?php echo(number_format($produto->valor,2,",","."));?></td>
+                            <td><?php echo(number_format($produto->estoque,3,",","."));?></td>
+                            <td><a href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-eye text-primary mx-1"></i></a>
+                                <i class="fas fa-edit text-info mx-1"></i>
+                                <i class="fas fa-trash text-danger mx-1"></i>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

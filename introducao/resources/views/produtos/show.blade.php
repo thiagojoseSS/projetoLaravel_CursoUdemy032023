@@ -6,8 +6,8 @@
           <h1 class="display-5 fw-bold"><?php echo $produto->nome; ?></h1>
           <p class="col-md-8 fs-4"><?php echo $produto->descricao; ?></p>
           <hr class="my-4">
-          <p><?php echo $produto->valor; ?></p>
-          <button class="btn btn-primary btn-lg" type="button">Example button</button>
+          <p>Valor R$ <?php echo(number_format($produto->valor,2,",",".")); ?></p>
+          <a name="" id="" class="btn btn-primary btn-lg" href="{{route('produtos')}}" role="button">Ver Produtos</a>
         </div>
       </div>
 
