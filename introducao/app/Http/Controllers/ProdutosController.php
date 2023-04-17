@@ -36,7 +36,7 @@ class ProdutosController extends Controller
 
     public function show($id){
         $produto = produto::find($id);
-        return view('produtos.show', ['id' => $produto]);
+        return view('produtos.show', ['produto' => $produto]);
     }
 
     // public function show($nome, $valor = null){
