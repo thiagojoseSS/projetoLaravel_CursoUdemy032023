@@ -39,6 +39,10 @@ class ProdutosController extends Controller
         return view('produtos.show', ['produto' => $produto]);
     }
 
+    public function insert(){
+        return view('produto.insert');
+    }
+
     // public function show($nome, $valor = null){
     //     return view('produtos.show', ['nome' => $nome, 'valor' => $valor]);
     //     // return "produto é $nome" . (($valor == null) ? "" : ", e o valor é $valor") . "!";
