@@ -40,7 +40,7 @@ class ProdutosController extends Controller
     }
 
     public function insert(){
-        return view('produto.insert');
+        // return view('produtos.insert');
     }
 
     // public function show($nome, $valor = null){

@@ -25,8 +25,17 @@
     <script src="../../../public/assets/datatables/datatables-demo.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/inputmask.js" integrity="sha512-mZdA4RMHmZy00bvtVQLDLjQegPrTWuVuCnmUPryP0ggmpK4xafI9CUOcQlRIitN4K088ETPfTTlI12aaS1hhVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.js" integrity="sha512-oh5GIQXTCMsUERbH7SU57kYHT6F5wE+oaa1ZDqLtN45VktL48xnNiTq/t7Uynfk6VmOtkFGTUHXKpPmp6ediFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('#valor').maskMoney({
+            prefix: 'R$ ',
+            thousands: '.',
+            decimal: ','
+          });
+        });
+    </script>
 
     <style>
         th,
@@ -35,6 +44,9 @@
             font-size: large;
             padding-right: 1rem;
             padding-left: 1rem;
+        }
+        input::placeholder {
+            color: brown;
         }
     </style>
 </head>

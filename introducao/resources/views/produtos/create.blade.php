@@ -1,21 +1,32 @@
-@extends('layouts.template')
-@section('title', 'Criar Produto')
+@extends('layouts.template') @section('title', 'Criar Produto')
 @section('content')
-<div class="conteiner">
-    <form method="post" action="{{route('produtos.insert')}}">
-        <div class="mb-3">
-          <label for="exampleInputName1" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="" name="nome">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEstoque1" class="form-label">Estoque</label>
-            <input type="text" class="form-control" id="" name="estoque">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputValor1" class="form-label">Valor</label>
-            <input type="text" class="form-control" id="" name="valor" onkeypress="$(this).mark('R$ #,##0,00')">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+<style>
+	input::placeholder {
+            color: brown;
+    }
+</style>
+<div class="conteiner flex-auto m-2 p-2">
+	<form method="POST" action="{{ route('produtos.insert') }}">
+		@csrf
+		<div class="d-flex row">
+			<div class="input-group col-sm">
+				<span class="input-group-text">Nome</span>
+				<input type="text" class="form-control" id="" name="nome" />
+			</div>
+			<div class="input-group col-sm">
+				<span class="input-group-text">Estoque</span>
+				<input type="text" class="form-control" id="" name="estoque" />
+			</div>
+			<div class="input-group col-sm">
+				<span class="input-group-text">Valor</span>
+				<input type="text" class="form-control" id="valor" name="valor" placeholder="R$ 0,00" style="color: blue; font-weight: bold;"/>
+			</div>
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputValor1" class="form-label">Descrição</label>
+			<input type="text" class="form-control" id="" name="descricao" />
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
 </div>
 @endsection
