@@ -15,7 +15,7 @@
 			</div>
 			<div class="input-group col-sm">
 				<span class="input-group-text">Estoque</span>
-				<input type="text" class="form-control" id="" name="estoque" />
+				<input type="number" class="form-control" id="" name="estoque" />
 			</div>
 			<div class="input-group col-sm">
 				<span class="input-group-text">Valor</span>
