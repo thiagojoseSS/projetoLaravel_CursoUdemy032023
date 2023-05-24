@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\produto;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 
 class ProdutosController extends Controller
 {
@@ -20,12 +22,12 @@ class ProdutosController extends Controller
                 ->orWhere('descricao', 'like', "%{$search}%")
                 ->orWhere('valor', 'like', "%{$search}%")
                 ->orWhere('estoque', 'like', "%{$search}%")
-                ->paginate($this->perPag);
+                ->Paginate($this->perPag);
            
             $produtos->appends(['search' => $search]);
             return view('produtos.index', compact('produtos', 'search'));
         }else {
-            $produtos = produto::paginate($this->perPag);
+            $produtos = produto::orderby('id', 'desc')->paginate($this->perPag);
         }
         
 
@@ -49,6 +51,7 @@ class ProdutosController extends Controller
         $produto->valor = str_replace(",", ".", $matches[1]);
         $produto->descricao = $request->descricao;
         $produto->save();
+        return redirect()->route('produtos');
     }
 
     // public function show($nome, $valor = null){

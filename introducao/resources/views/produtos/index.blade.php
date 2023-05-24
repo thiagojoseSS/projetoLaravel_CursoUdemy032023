@@ -48,7 +48,7 @@
                         <tr>
                             <td>{{$produto->nome}}</td>
                             <td>R$ <?php echo(number_format($produto->valor,2,",","."));?></td>
-                            <td><?php echo(number_format($produto->estoque,3,",","."));?></td>
+                            <td class="text-right"><?php echo(number_format($produto->estoque,3,",","."));?></td>
                             <td><a title="Detalhes do Produto" href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-eye text-primary mx-1"></i></a>
                                 <a title="Editar Dados do Produto" href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-edit text-info mx-1"></i></a>
                                 <a title="Excluir Produto" href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-trash text-danger mx-1"></i></a>
