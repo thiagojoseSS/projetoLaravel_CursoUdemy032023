@@ -26,7 +26,7 @@
 			<label for="exampleInputValor1" class="form-label">Descrição</label>
 			<input type="text" class="form-control" id="" name="descricao" />
 		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn btn-primary">Salvar</button>
 	</form>
 </div>
 @endsection

@@ -55,8 +55,19 @@ class ProdutosController extends Controller
     }
 
     public function edit(produto $produto){
-        return $produto;
         return view('produtos.edit', ['produto' => $produto]);
+    }
+
+    public function editar(Request $request){
+        $produto = new produto();
+        $produto = produto::findOrFail($request->id);
+        $produto->nome = $request->nome;
+        $produto->estoque = str_replace(",", ".", $request->estoque);
+        preg_match('/([0-9]+[,0-9]+)/', $request->valor, $matches);
+        $produto->valor = str_replace(",", ".", $matches[1]);
+        $produto->descricao = $request->descricao;
+        $produto->save();
+        return redirect()->route('produtos');
     }
 
     // public function show($nome, $valor = null){

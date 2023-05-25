@@ -32,6 +32,10 @@
             thousands: '.',
             decimal: ','
           });
+          $('#estoque').maskMoney({
+            thousands: '.',
+            decimal: ','
+          });
         });
     </script>
 
