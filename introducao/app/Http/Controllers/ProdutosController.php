@@ -54,6 +54,11 @@ class ProdutosController extends Controller
         return redirect()->route('produtos');
     }
 
+    public function edit(produto $produto){
+        return $produto;
+        return view('produtos.edit', ['produto' => $produto]);
+    }
+
     // public function show($nome, $valor = null){
     //     return view('produtos.show', ['nome' => $nome, 'valor' => $valor]);
     //     // return "produto é $nome" . (($valor == null) ? "" : ", e o valor é $valor") . "!";
