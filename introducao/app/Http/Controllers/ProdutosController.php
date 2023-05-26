@@ -69,6 +69,10 @@ class ProdutosController extends Controller
         return redirect()->route('produtos');
     }
 
+    public function delete(produto $produto){
+        return "teste";
+    }
+
     // public function show($nome, $valor = null){
     //     return view('produtos.show', ['nome' => $nome, 'valor' => $valor]);
     //     // return "produto é $nome" . (($valor == null) ? "" : ", e o valor é $valor") . "!";
