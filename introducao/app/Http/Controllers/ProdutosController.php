@@ -12,6 +12,7 @@ class ProdutosController extends Controller
     public $perPag = 10;
 
     public function index(){
+        // dd($_GET['qntPag']);
         $this->perPag = (isset($_GET['qntPag'])) ? $_GET['qntPag'] : $this->perPag;
 
         if (isset($_GET['search'])) {
@@ -24,13 +25,12 @@ class ProdutosController extends Controller
                 ->orWhere('estoque', 'like', "%{$search}%")
                 ->Paginate($this->perPag);
            
-            $produtos->appends(['search' => $search]);
+            $produtos->appends(['search' => $search, 'qntPag' => $this->perPag]);
             return view('produtos.index', compact('produtos', 'search'));
         }else {
             $produtos = produto::orderby('id', 'desc')->paginate($this->perPag);
         }
         
-
         return view('produtos.index', ['produtos' => $produtos, 'perPag' => $this->perPag]);
     }
 
@@ -58,8 +58,7 @@ class ProdutosController extends Controller
         return view('produtos.edit', ['produto' => $produto]);
     }
 
-    public function editar(Request $request){
-        $produto = new produto();
+    public function editar(Request $request, produto $produto){
         $produto = produto::findOrFail($request->id);
         $produto->nome = $request->nome;
         $produto->estoque = str_replace(",", ".", $request->estoque);

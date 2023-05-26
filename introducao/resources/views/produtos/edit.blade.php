@@ -25,10 +25,9 @@
                 placeholder="R$ 0,00"/>
 			</div>
 		</div>
-		<div class="mb-3 input-group inline-grid">
-			<label for="exampleInputValor1" class="form-label align-items-start font-bold mt-2 mb-0 ">Descrição</label>
+		<div class="mb-3 inline-grid">
+			<label for="exampleInputValor1" class="form-label align-items-start font-bold mt-2 mb-0">Descrição</label>
             <textarea name="descricao" id="" cols="200" rows="5" name="descricao" class="form-control align-bottom">{{$produto->descricao}}</textarea>
-			<!-- <input type="text" class="form-control" id="" name="descricao" value="{{$produto->descricao}}"/> -->
 		</div>
         <div class="input-group">
             <button type="submit" class="btn btn-primary">Confirmar</button>
