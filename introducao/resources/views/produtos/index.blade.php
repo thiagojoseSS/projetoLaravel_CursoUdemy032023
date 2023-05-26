@@ -65,7 +65,7 @@
                                     <i class="fas fa-eye text-primary mx-1 hover:bg-white transition-colors"></i></a>
                                 <a title="Editar Dados do Produto" href="{{route('produtos.edit', $produto)}}">
                                     <i class="fas fa-edit text-info mx-1 hover:bg-red-500 transition-colors"></i></a>
-                                <a title="Excluir Produto" data-bs-toggle="modal" data-bs-target="#modal1" data-bs-whatever="{{$produto->nome}}" href="">
+                                <a title="Excluir Produto" href="{{route('produtos.modal', $produto)}}">
                                     <i class="fas fa-trash text-danger mx-1 hover:bg-white transition-colors"></i></a>
                             </td>
                         </tr>

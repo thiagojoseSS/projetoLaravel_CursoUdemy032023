@@ -70,7 +70,12 @@ class ProdutosController extends Controller
     }
 
     public function delete(produto $produto){
-        return "teste";
+        $produto->delete();
+        return redirect()->route('produto');
+    }
+
+    public function modal(produto $produto){
+        return view('produtos.show', ['produto' => $produto]);
     }
 
     // public function show($nome, $valor = null){
