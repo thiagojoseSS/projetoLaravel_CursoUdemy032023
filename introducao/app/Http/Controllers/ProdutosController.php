@@ -74,8 +74,9 @@ class ProdutosController extends Controller
         return redirect()->route('produto');
     }
 
-    public function modal(produto $produto){
-        return view('produtos.show', ['produto' => $produto]);
+    public function modal($id){
+        $produto = produto::orderby('id', 'desc')->paginate($this->perPag);
+        return view('produtos.index', ['produtos' => $produto, 'id' => $id, 'perPag' => $this->perPag]);
     }
 
     // public function show($nome, $valor = null){
