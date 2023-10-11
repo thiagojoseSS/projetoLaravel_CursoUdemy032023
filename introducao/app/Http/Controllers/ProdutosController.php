@@ -71,7 +71,7 @@ class ProdutosController extends Controller
 
     public function delete(produto $produto){
         $produto->delete();
-        return redirect()->route('produto');
+        return redirect()->route('produtos');
     }
 
     public function modal($id){

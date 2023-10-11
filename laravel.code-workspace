@@ -14,5 +14,6 @@
 		],
 		"git.autofetch": true,
 		"php.debug.executablePath": "",
+		"editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?$",
 	}
 }
