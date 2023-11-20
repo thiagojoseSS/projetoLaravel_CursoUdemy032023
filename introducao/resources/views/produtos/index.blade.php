@@ -11,6 +11,10 @@
     <!-- <?php $qntPag = (isset($_GET['qntPag'])) ? $_GET['qntPag'] : 10 ?>
     <?php echo((isset($_GET['search'])) ? $_GET['search'] : 10 ) ?> -->
 
+    <?php
+        echo(@$id);
+    ?>
+
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
@@ -65,6 +69,7 @@
                                     <i class="fas fa-eye text-primary mx-1 hover:bg-white transition-colors"></i></a>
                                 <a title="Editar Dados do Produto" href="{{route('produtos.edit', $produto)}}">
                                     <i class="fas fa-edit text-info mx-1 hover:bg-red-500 transition-colors"></i></a>
+                                <!-- <a title="Excluir Produto" href="{{route('produtos.modal', $produto)}}"> -->
                                 <a title="Excluir Produto" href="{{route('produtos.modal', $produto)}}">
                                     <i class="fas fa-trash text-danger mx-1 hover:bg-white transition-colors"></i></a>
                                 <button type="button" class="bg-indigo-500 inline-flex" disabled>
@@ -92,9 +97,9 @@
             </div>
         </div>
     </div>
-    <!-- Modal Body -->
+    <!-- Modal -->
     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-    <div class="modal fade" id="modal1" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+    <div class="modal fade" id="modal1" tabindex="-1" data-bs-keyboard="false"
         role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
             <div class="modal-content">
@@ -107,7 +112,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <form action="{{route('produtos.delete', $produto)}}" method="POST">
+                    @if (isset($id))
+                    <form action="{{route('produtos.delete', $id)}}" method="POST">
+                    @else
+                    <form action="{{route('produtos.delete', '.')}}" method="POST">
+                    @endif
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger">Excluir</button>
@@ -127,7 +136,10 @@
     <hr class="mt-5 mb-5">
     @php
         if(@$id != ""){
-            echo "<script>$('#modal1').modal('show');</script>";
+            echo "<script>
+                //$('#modal1').modal('show')
+                new bootstrap.Modal($('#modal1')).show();
+            </script>";
         }
     @endphp
 </div>
