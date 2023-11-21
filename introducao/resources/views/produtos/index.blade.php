@@ -1,6 +1,14 @@
 @extends('layouts.template')
 @section('title', 'Página dos Produtos')
 @section('content')
+
+<?php
+@session_start();
+if(@$_SESSION['id_user'] == NULL) {
+    echo "<script language='javascript'> window.location='./' </script>";
+}
+?>
+
 <div class="w-2/3 container">
 
     <script src="../../../public/assets/datatables/jquery.dataTables.js"></script>

@@ -17,7 +17,7 @@ use Illuminate\Support\Pluralizer;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('root');
 
 Route::get('produtos/inserir', [ProdutosController::class, 'create'])->name('produtos.inserir');
 Route::get('produtos/{id}', [ProdutosController::class, 'show'])->name('produtos.descricao');
@@ -28,7 +28,8 @@ Route::get('produtos/{produto}/edit', [ProdutosController::class, 'edit'])->name
 Route::put('produtos/{produto}', [ProdutosController::class, 'editar'])->name('produtos.editar');
 Route::get('produtos/{produto}/delete', [ProdutosController::class, 'modal'])->name('produtos.modal');
 Route::delete('produtos/{produto}', [ProdutosController::class, 'delete'])->name('produtos.delete');
-Route::post('usuario', [UsuariosController::class, 'login'])->name('usuarios.login');
+Route::post('painel', [UsuariosController::class, 'login'])->name('usuarios.login');
+Route::get('/', [UsuariosController::class, 'logout'])->name('usuarios.logout');
 
 
 // Route::get('/', function () {
